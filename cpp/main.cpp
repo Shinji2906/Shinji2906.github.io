@@ -15,7 +15,9 @@ void NhapCDgame (struct CDgame &cd) {
     getline(cin, cd.Tengame);
     cout << "Gia tien cua CD game la : ";
     cin >> cd.GiaTien;
+    getchar();
 }
+// in số tiền
 string formatNumber(int num) {
     stringstream ss;
     string result;
@@ -33,18 +35,31 @@ string formatNumber(int num) {
     }
     return result;
 }
-// Xuat ten 1 dia CD game
+// xuất tên đĩa CD và số tiền
 void XuatCDgame (struct CDgame &cd) {
     cout << "Hien ban dang sell CD game : " << cd.Tengame << endl;
     cout << "Gia tien cua dia CD game la : " << formatNumber(cd.GiaTien * 1000) << "vnd" << endl;
 }
 
+// nhập nhiều số lượng đĩa CD
+void NhapNhieuCDgame (struct CDgame cd[], int n) {
+    for (int i = 0; i < n; i++) {
+        NhapCDgame(cd[i]);
+    }
+}
+void XuatNhieuCDgame (struct CDgame cd[], int n) {
+    for (int i = 0; i < n; i++) {
+        XuatCDgame(cd[i]);
+    }
+}
 
 
 int main () {
-
-    struct CDgame cd;
-    NhapCDgame(cd);
-    XuatCDgame(cd);
+    int n;
+    cin >> n;
+    getchar();
+    struct CDgame cd[n];
+    NhapNhieuCDgame(cd, n);
+    XuatNhieuCDgame(cd, n);
     return 0;
 }
