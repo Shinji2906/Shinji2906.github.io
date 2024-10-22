@@ -4,54 +4,47 @@
 
 using namespace std;
 
-struct DANHSACH {
-    string TenSach;
-    float giaTien;
+struct CDgame
+{
+    string Tengame;
+    int GiaTien;
 };
-
-//Code mảng sách
-
-void NhapSach (struct DANHSACH &sach) {
-    cout << "Nhap ten sach : ";
-    getline(cin, sach.TenSach);
-    cout << "Nhap gia tien cua sach: ";
-    cin >> sach.giaTien;
-    getchar();
+// Nhap ten 1 dia CD game
+void NhapCDgame (struct CDgame &cd) {
+    cout << "Nhap ten dia CD game ban muon sell : ";
+    getline(cin, cd.Tengame);
+    cout << "Gia tien cua CD game la : ";
+    cin >> cd.GiaTien;
 }
+string formatNumber(int num) {
+    stringstream ss;
+    string result;
+    ss << num;
+    string str = ss.str();
 
-//xuất 1 cuốn sách
-void XuatSach (struct DANHSACH &sach) {
-    cout << "Quyen sach cua ban la : " << sach.TenSach << endl;
-    cout << "Quyen sach co gia la : " << sach.giaTien << endl;
-}
-
-//nhập nhiều cuốn sách
-void nhapDSSach(int sol, struct DANHSACH sach[]) {
-    for (int i = 0; i < sol; i++) {
-        NhapSach(sach[i]);
+    int count = 0;
+    for (int i = str.length() - 1; i >= 0; --i) {
+        result.insert(result.begin(), str[i]);
+        count++;
+        if (count == 3 && i != 0) {
+            result.insert(result.begin(), '.');
+            count = 0;
+        }
     }
+    return result;
+}
+// Xuat ten 1 dia CD game
+void XuatCDgame (struct CDgame &cd) {
+    cout << "Hien ban dang sell CD game : " << cd.Tengame << endl;
+    cout << "Gia tien cua dia CD game la : " << formatNumber(cd.GiaTien * 1000) << "vnd" << endl;
 }
 
-//xuất nhiều cuốn sách
-void xuatDSSach(int sol, struct DANHSACH sach[]) {
-    for (int i = 0; i < sol; i++)
-    {
-        printf("[%d]\n", i + 1);
-        XuatSach(sach[i]);
-        cout << endl;
-    }
-}
+
+
 int main () {
-    int n;
-    cout << "Nhap so luong sach muon tao: "; cin >> n; getchar();
-    if (n < 0) {
-        cout << "Khong hop le!!! Exit";
-        exit(0);
-    } else {
-        struct DANHSACH sach[n];
-        nhapDSSach(n, sach);
-        xuatDSSach(n, sach);
-    }
-   
+
+    struct CDgame cd;
+    NhapCDgame(cd);
+    XuatCDgame(cd);
     return 0;
 }
