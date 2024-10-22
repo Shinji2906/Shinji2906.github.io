@@ -8,6 +8,8 @@ struct DANHSACH {
     float giaTien;
 };
 
+//Code mảng sách
+
 void NhapSach (struct DANHSACH &sach) {
     cout << "Nhap ten sach : ";
     getline(cin, sach.TenSach);
