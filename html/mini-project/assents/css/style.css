@@ -1,0 +1,80 @@
+/* reset lại CSS */
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+
+}
+
+#header{
+    height: 46px;
+    background-color: #000;
+    position: relative;
+}
+
+
+#nav {
+
+}
+
+#nav li {
+    display: inline-block;
+    
+}
+
+#nav li a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    /* chỉ dùng khi có line-height vì inline-block ăn theo line height */
+    display: inline-block; 
+}
+
+#nav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav{
+    display: none;
+}
+
+#slider {
+
+}
+
+#content {
+
+}
+
+#about {
+
+}
+
+#tour {
+
+}
+
+#contact {
+
+}
+
+#image {
+
+}
+
+#fooder {
+
+}
+
+#fooder {
+
+}
