@@ -1,6 +1,7 @@
 #include <bits/stdc++.h> //THử viện tổng
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
