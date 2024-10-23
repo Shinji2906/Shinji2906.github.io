@@ -7,6 +7,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
 }
 
 #main {
@@ -26,7 +27,11 @@ html {
 
 #nav li {
     display: inline-block;
-    
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
 }
 
 #nav li a {
@@ -37,16 +42,20 @@ html {
     /* chỉ dùng khi có line-height vì inline-block ăn theo line height */
     display: inline-block; 
 }
-
-#nav li:hover a{
+#nav > li:hover > a{
     color: #000;
     background-color: #ccc;
 }
 
-#nav .subnav{
-    display: none;
+#nav li:hover a{
+    
 }
 
+#nav .subnav {
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+}
 #slider {
 
 }
