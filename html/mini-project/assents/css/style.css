@@ -5,63 +5,267 @@
  box-sizing: border-box;
 }
 
+/*
+Kỹ năng phân tích website
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+*/
+
+/*
+1. Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng (kiểu chữ, hình tròn, hình vuông)
+*/
+
 html {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ccc;
+    background-color: #ffffff;
+}
+
+
+.clear::after {
+    /* khi ta dùng float cho hần tử cha không bao bọc được phần tử con
+    Khi một phần tử con được áp dụng float, phần tử cha của nó thường 
+    mất khả năng bao bọc chiều cao của phần tử con đó. Điều này xảy ra 
+    vì phần tử nổi (floated) không còn nằm trong dòng bình thường của tài 
+    liệu, khiến phần tử cha có thể bị "sập" (collapse) và không có chiều cao.*/
+    content: "";
+    display: block;
+    clear: both;
 }
 
 #main {
-
+    
 }
 
-#header{
+#header {
     height: 46px;
     background-color: #000;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* z-index: 1; chỉnh trục Z "có thể hiểu là chỉnh layer giữa các div" */
+    z-index: 1;
 }
 
 
-#nav {
+#header .search-icon {
+    line-height: 46px;
+    float: right;
+    padding: 0 26px;
+}
 
+#header .search-icon:hover {
+    background-color: red;
+
+}
+
+#header .search-icon-sub {
+    color: white;
+}
+
+.subnav li {
+    width: 100%;
+}
+
+#nav {
+    display: inline-block;
+}
+.subnav {
+    display: inline-block;
+}
+
+#nav > li {
+    display: inline-block;
 }
 
 #nav li {
-    display: inline-block;
     position: relative;
 }
 
 #nav > li > a {
-    color: #fff;
+    /* text-transform: uppercase; viết hoa tất cả text */
+    text-transform: uppercase; 
+    color: #ffffff;
 }
 
 #nav li a {
-    color: #fff;
+    /* text-decoration: none; xoá gạch chân của thẻ a */
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px;
-    /* chỉ dùng khi có line-height vì inline-block ăn theo line height */
+    /* display: inline-block; chỉ dùng khi có line-height vì inline-block ăn theo line height */
     display: inline-block; 
 }
-#nav > li:hover > a{
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li:hover > a, 
+#nav .subnav li:hover a{
     color: #000;
     background-color: #ccc;
 }
 
-#nav li:hover a{
+#nav .subnav a{
+    width: 100%;
+    color: #000;
+    line-height: 48px;
+    padding: 0 16px;
     
 }
 
+#nav .nav-arrow-down {
+    font-size: 14px;
+
+}
+
 #nav .subnav {
+    top: 100%;
+    min-width: 160px;
+    list-style: none;
     background-color: #fff;
     position: absolute;
-    color: #000;
+    display: none;
+
+    /* code bóng đỗ cho subnav */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 #slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/html/mini-project/assents/img/slider/sl1.jpg') top center / cover no-repeat;
+}
 
+#slider .text-content {
+    /* transform: translateX(-50%); Căn giữa text khi có position */
+    /**/
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    bottom: 47px;
+    color: #fff;
+    position: absolute;
+}
+
+#slider .text-heading {
+    /*font-weith giảm độ dày font  */
+    font-weight: 500px; 
+    font-size: 24px;
+    padding: 5px 0;
+}
+
+#slider .text-description {
+    font-size: 15px;
+    margin-top: 20px;
 }
 
 #content {
 
+}
+
+#content .content-section {
+    width: 800px;
+
+    /*margin left-right: auto; tự căng giữa chữ*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    
+    text-align: center;
+    /* letter-spacing: 4px; tạo khoảng cách giữa các chữ  */
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+    font-style: italic;
+    /* opacity: 60%; giảm độ trong suốt của chữ */
+    opacity: 60%;
+}
+
+#content .about-text {
+    /* text-align: justify; căn điều text 2 bên */
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-item{
+    float: left;
+    /* width: calc(100% / 3); chia 3 ảnh từ 100% cho 3 */
+    width: calc(100% / 3);
+    text-align: center;
+}
+
+#content .member-list {
+    padding-top: 46px;
+    overflow: hidden;
+}
+
+#content .member-name {
+    font-size: 15px;
+    
+}
+
+#content .member-img {
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* Tour section */
+#tour-section {
+    background-color: #000;
+}
+
+#tour-section .content-section {
+    color: #fff;
+}
+
+#tour-section .ticket-list {
+    color: #000;
+    background-color: #fff;
+}
+
+#tour-section li {
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#tour-section li .sold-out{
+    margin-left: 16px;
+    background-color: red;
+    color: #fff;
+    padding: 4px 4px;
+}
+
+#tour-section .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+
+    /*margin-top: -3px chỉ được dùng -3px khi có float*/
+    margin-top: -3px;
 }
 
 #about {
