@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The rock</title>
+    <title>The Band</title>
+    <link rel="icon" href="/html/mini-project/assents/img/icon/communityIcon_0idakmzhxhpd1.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="../mini-project/assents/css/style.css">
     <link rel="stylesheet" href="../mini-project/assents/fonts/themify-icons/themify-icons.css">
 </head>
@@ -13,10 +14,10 @@
             </i>
             <!-- ul#nav>li*5>a tạo unlist li a nhanh-->
             <ul id="nav"> 
-                <li><a href="https://youtube.com">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li>
                     <a href="">
                         More
@@ -41,31 +42,30 @@
         </div>
         <div id="content">
             <!--About section (dùng chung)-->
-            <div class="content-section">
+            <div id="band" class="content-section">
                 <h2 class="section-heading">THE BAND</h2>
                 <p class="section-sub-heading">We love music</p>
                 <p class="about-text">
                     We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
                 </p>
                 <div class="member-list">
-                    <div class="member-item">
+                    <div class="col-third col text-center">
                         <p class="member-name">name</p>
                         <img class="member-img" src="/html/mini-project/assents/img/teams/bandmember.jpg" alt="" class="avt">
                     </div>
-                    <div class="member-item">
+                    <div class="col-third col text-center">
                         <p class="member-name">name</p>
                         <img class="member-img" src="/html/mini-project/assents/img/teams/bandmember.jpg" alt="" class="avt">
                     </div>
-                    <div class="member-item">
+                    <div class="col-third col text-center">
                         <p class="member-name">name</p>
                         <img class="member-img" src="/html/mini-project/assents/img/teams/bandmember.jpg" alt="" class="avt">
                     </div>
                 </div>
-                <div class="clear"></div>
             </div>
             <!--Tour section-->
             <div id="tour-section">
-                <div class="content-section">
+                <div id="tour" class="content-section">
                     <h2 class="section-heading">TOUR DATES</h2>
                     <p class="section-sub-heading">Remember to book your tickets!</p>
                     <!--Ticket -->
@@ -74,8 +74,8 @@
                         <li>October<span class="sold-out">Sold out</span></li>
                         <li>November <span class="quantity">3</span></li>
                     </ul>
-                    <div class="row places-list">
-                        <div class="col places-item">
+                    <div class="row places-list clear">
+                        <div class="col col-third places-item">
                             <img src="/html/mini-project/assents/img/place/newyork.jpg" alt="" class="place-img">
                             <div class="places-content">
                                 <h3 class="places-heading">New York</h3>
@@ -84,7 +84,7 @@
                                 <button class="place-buy js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="col places-item">
+                        <div class="col col-third places-item">
                             <img src="/html/mini-project/assents/img/place/paris.jpg" alt="" class="place-img">
                             <div class="places-content">
                                 <h3 class="places-heading">Paris</h3>
@@ -93,54 +93,70 @@
                                 <button class="place-buy js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="col places-item">
+                        <div class="col col-third places-item">
                             <img src="/html/mini-project/assents/img/place/sanfran.jpg" alt="" class="place-img">
                             <div class="places-content">
                                 <h3 class="places-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="place-buy js-buy-ticket">Buy Tickets</button>
+                                <button class="place-buy btn js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="clear"></div>
             </div>
-            <div class="contact-section">
-                <div class="content-section"></div>
-                    <h2 class="section-heading">CONTACT</h2>
-                    <p class="section-sub-heading">Fan?Drop a note!</p>
+            <!-- --------- -->
 
-                    
-                    <div class="clear"></div>
+            <!-- Begin: CONTACT -->
+            <div id="contact" class="content-section">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-sub-heading">Fan? Drop a note!</p>
+                <div class="row contact-form clear">
+                    <div class="col col-half contact-info">
+                        <p><i class="ti-location-pin"></i>Go vap, Vietnam</p>
+                        <p><i class="ti-mobile"></i>+84 972495801</p>
+                        <p><i class="ti-email"></i>nguyeenhuynhlong@gmail.com</p>
+                    </div>
+                    <div class="col col-half">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half">
+                                    <input type="text" name="" required placeholder="Name" id="" class="form-control">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="email" name="" required placeholder="Email" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-full mt-8">
+                                    <input type="text" name="" required placeholder="Message" id="" class="form-control">
+                                </div>
+                            </div>
+                            <input class="btn form-submit mt-16 text-white" type="submit" value="SEND">
+                        </form>
+                    </div>
                 </div>
             </div>
+            <!-- End: Contact -->
+            <div class="map-section">
+                <img src="/html/mini-project/assents/img/place/map.jpg" alt="">
+            </div>
 
-        </div>
-        
-        <div style="height: 4000px; background-color: antiquewhite;" id="">
-            <div id="about">
-                
-            </div>
-            <div id="tour">
-    
-            </div>
-            <div id="contact">
-    
-            </div>
-            <div id="image">
-    
-            </div>
-            <div id="fooder">
-    
+            <div id="footer">
+                <div class="social-list font-size-18">
+                    <a target="_blank" href="https://www.facebook.com/longnhk5/"><i class="ti-facebook"></i></a>
+                    <a target="_blank" href=""><i class="ti-instagram"></i></a>
+                    <a target="_blank" href="https://github.com/longnhx1"><i class="ti-github"></i></a>
+                    <a target="_blank" href=""><i class="ti-pinterest"></i></a>
+                    <a target="_blank" href=""><i class="ti-youtube"></i></a>
+                    <a target="_blank" href=""><i class="ti-linkedin"></i></a>
+                </div>
+                <span class="end-footer font-size-18">
+                    Powered by <a href="">w3.css</a>
+                </span>
             </div>
         </div>
-
-        
-        <div id="fooder">
-    
-        </div>  
-    </div>
+    <!-- modal cho buy ticket -->
     <div class="modal js-modal">
         <div class="modal-container js-modal-conterner">
             <div class="">
